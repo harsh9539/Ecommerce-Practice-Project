@@ -5,11 +5,13 @@ import Announcement from "../components/Announcement"
 import Footer from "../components/Footer"
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { mobile } from '../responsive'
 const Container = styled.div`
 
 `
 const Wrapper = styled.div`
     padding:20px;
+    ${mobile({padding:10})}
 
 `
 const Title = styled.h1`
@@ -23,7 +25,7 @@ const Top = styled.div`
     padding:20px;
 `
 const TopTexts=styled.div`
-
+${mobile({display:'none'})}
 
 `
 const TopText =styled.span`
@@ -44,6 +46,8 @@ const TopButton =styled.button`
 const Bottom = styled.div`
     display:flex;
     justify-content:space-between;
+${mobile({flexDirection:'column'})}
+
 `
 const Info = styled.div`
     flex:3;
@@ -51,7 +55,7 @@ const Info = styled.div`
 const Product = styled.div`
     display:flex;
     justify-content:space-between;
-
+    ${mobile({flexDirection:'column'})}
 `
 
 const ProductDetial= styled.div`
@@ -99,11 +103,13 @@ margin-bottom:20px;
 const ProductAmount = styled.div`
 font-size:24px;
 margin:5px;
+${mobile({margin:'5px 15px'})}
 `
 
 const ProductPrice = styled.span`
     font-size:30px;
     font-weight:200;
+    ${mobile({marginBottom:'20px'})}
 `
 
 const Hr = styled.hr`
@@ -151,7 +157,9 @@ const Cart = () => {
     return (
         <Container>
             <Navbar/>
+            <div style={{marginTop:10}}>
             <Announcement/>
+            </div>
                 <Wrapper>
                     <Title>YOUR BAG</Title>
                     <Top>

@@ -6,8 +6,12 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MailIcon from '@mui/icons-material/Mail';
 import MapIcon from '@mui/icons-material/Map';
+import { mobile } from '../responsive';
 const Container = styled.div`
     display:flex;
+    ${mobile({
+        flexDirection:'column'
+    })}
 
 `
 const Left = styled.div`
@@ -42,6 +46,8 @@ const SocialIcon = styled.div`
 const Center = styled.div`
     flex:1;
     padding:20px;
+    ${mobile({display:'none'})}
+
 `
 const Title = styled.h3`
     margin-bottom:30px;
@@ -60,7 +66,7 @@ const ListItem = styled.li`
 const Right = styled.div`
     flex:1;
     padding:20px;
-    
+    ${mobile({background:"#fff8f8"})}
 `
 const ContactItem = styled.div`
     margin-bottom:20px;

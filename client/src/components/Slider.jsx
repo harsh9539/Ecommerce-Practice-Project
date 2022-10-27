@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import { sliderItems } from "../data"
+import { mobile } from '../responsive';
+
+
 const Container = styled.div`
 margin-top:20px;
 width:100%;
@@ -11,6 +14,7 @@ height:100vh;
 display:flex;
 position:relative;
 overflow:hidden;
+${mobile({display:'none'})}
 `
 const Arrow = styled.div`
 width:50px;

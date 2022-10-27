@@ -6,12 +6,14 @@ import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { mobile } from '../responsive'
 const Container = styled.div`
     
 `
 const Wrapper = styled.div`
     padding:50px;
     display:flex;
+    ${mobile({padding:'10px',flexDirection:'column'})}
 `
 const ImageContainer = styled.div`
     flex:1;
@@ -20,10 +22,14 @@ const  Image = styled.img`
     width:100%;
     height:90vh;
     object-fit:cover;
+    ${mobile({height:'40vh'})}
+
 `
 const InfoContainer = styled.div`
     flex:1;
     padding:0px 50px;
+    ${mobile({padding:20})}
+
 `
 const Title = styled.h1`
     font-weight:200;
@@ -41,6 +47,8 @@ width:50%;
 margin:30px 0;
 display:flex;
 justify-content:space-between;
+${mobile({width:'100%'})}
+
 `
 
 const Filter = styled.div`
@@ -74,6 +82,7 @@ const AddContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content:space-between;
+    ${mobile({width:'100%'})}
 `
 
 const AmountContainer = styled.div`
@@ -109,7 +118,9 @@ const Product = () => {
     return (
         <Container>
             <Navbar/>
+            <div style={{marginTop:10}}>
             <Announcement/>
+            </div>
             <Wrapper>
                 <ImageContainer>
                     <Image src="https://th.bing.com/th/id/OIP.mzP6UTm8ew2mhOFnkwZk_wHaLH?pid=ImgDet&rs=1"/>

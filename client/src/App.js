@@ -1,11 +1,12 @@
 
 // import Home from './pages/Home';
-// import Product  from './pages/Product';
-// import Login from './pages/Login';
+import Product  from './pages/Product';
+import Login from './pages/Login';
 // import Register from './pages/Register';
-// import ProductList from './pages/ProductList';
+import ProductList from './pages/ProductList';
 
 import Cart from "./pages/Cart";
+import Register from './pages/Register';
 
 function App() {
   return (
