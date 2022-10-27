@@ -9,7 +9,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-    padding:10px 20px;
+    padding:0px 20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
