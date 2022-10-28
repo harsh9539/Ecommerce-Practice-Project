@@ -1,11 +1,11 @@
 import express from 'express';
 import stripe from 'stripe';
 const router = express.Router();
-const stripe = (process.env.STRIPE_KEY);
+const stripe_key = stripe(process.env.STRIPE_KEY);
 
 
 router.post("/payment",(req,res)=>{
-    stripe.charges.create({
+    stripe_key.charges.create({
         source:req.body.tokenId,
         amount:req.body.amount,
         currency:"usd",

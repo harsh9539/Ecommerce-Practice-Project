@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import userRoute from './routes/user.js';
 import authRoute from "./routes/auth.js"
 import productRoute from "./routes/product.js"
+import stripeRoute from './routes/stripe.js';
 import cartRoute from "./routes/cart.js"
 import orderRoute from "./routes/order.js"
 import cors from 'cors'
@@ -25,6 +26,7 @@ app.use("/api/users",userRoute);
 app.use("/api/products",productRoute);
 app.use("/api/orders",orderRoute);
 app.use("/api/carts",cartRoute);
+app.use("/api/checkout",stripeRoute);
 
 // PORT
 app.listen(process.env.PORT || 8000, () => {
