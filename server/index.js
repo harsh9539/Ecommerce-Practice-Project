@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import userRoute from './routes/user.js';
 import authRoute from "./routes/auth.js"
 import productRoute from "./routes/product.js"
+import cartRoute from "./routes/cart.js"
+import orderRoute from "./routes/order.js"
 import cors from 'cors'
 
 const app = express();
@@ -21,6 +23,8 @@ mongoose.connect(process.env.MONGODB_URL).then(() => { console.log("DB connectio
 app.use("/api/auth",authRoute);
 app.use("/api/users",userRoute);
 app.use("/api/products",productRoute);
+app.use("/api/orders",orderRoute);
+app.use("/api/carts",cartRoute);
 
 // PORT
 app.listen(process.env.PORT || 8000, () => {
