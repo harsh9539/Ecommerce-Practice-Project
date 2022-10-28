@@ -1,8 +1,11 @@
 import Search from '@mui/icons-material/Search'
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { publicRequest } from '../api';
 
 const Info = styled.div`
     opacity:0;
@@ -65,6 +68,7 @@ const Icon = styled.div`
 
 
 const Product = ({ item }) => {
+    
     return (
         <Container>
             <Circle />
@@ -74,7 +78,9 @@ const Product = ({ item }) => {
                     <ShoppingCartOutlined />
                 </Icon>
                 <Icon>
-                    <Search />
+                    <Link to={`/product/${item._id}`}>
+                        <Search />
+                    </Link>
                 </Icon>
                 <Icon>
                     <FavoriteBorderIcon />
