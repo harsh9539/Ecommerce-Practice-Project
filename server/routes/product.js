@@ -4,7 +4,7 @@ import { verifyToken, verifyTokenAndAdmin, verifyTokenAndAuthorization } from ".
 
 const router = express.Router();
 
-// CREATE
+// CREATE Product
 
 router.post("/",verifyTokenAndAdmin,async (req,res)=>{
     const newProduct = new Product(req.body);
@@ -20,7 +20,7 @@ router.post("/",verifyTokenAndAdmin,async (req,res)=>{
 
 
 
-
+// Update Product
 router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
     try {
         const updatedProduct = await Product.findByIdAndUpdate(req.params.id, {
@@ -33,7 +33,7 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
         res.status(500).json(err)
     }
 })
-// Delete User
+// Delete Product
 router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
     try {
         await Product.findByIdAndDelete(req.params.id);
