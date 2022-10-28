@@ -9,7 +9,13 @@ import AddIcon from '@mui/icons-material/Add';
 import { mobile } from '../responsive'
 import { useLocation } from 'react-router-dom'
 import { publicRequest } from '../api'
-import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../redux/cartRedux'
+
+
+
+
+
 const Container = styled.div`
     
 `
@@ -126,6 +132,7 @@ const Product = () => {
     const [quantity, setQuantity] = useState(1);
     const [color,setColor] = useState("");
     const [size,setSize] = useState("");
+    const disptach=  useDispatch();
     useEffect(() => {
         const getProduct = async () => {
             try {
@@ -146,7 +153,9 @@ const Product = () => {
     }
     const handleClick = ()=>{
         //update cart
-        
+        disptach(
+        addProduct({...product,quantity,color,size})
+        );
     }
     return (
         <Container>
@@ -178,7 +187,7 @@ const Product = () => {
                             <FilterSize onChange={(e)=>setSize(e.target.value)}>
                                 {
                                     product.size?.map(s=>(
-                                        <FilterSizeOption>{s}</FilterSizeOption>
+                                        <FilterSizeOption key={s}>{s}</FilterSizeOption>
                                     ))
                                 }
                             </FilterSize>
